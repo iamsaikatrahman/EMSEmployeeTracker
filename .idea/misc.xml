@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/custom_button.xml" value="0.1" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/custom_email_icon.xml" value="0.1" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/custom_input.xml" value="0.1425" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/ic_email_focused.xml" value="0.1" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/ic_lock.xml" value="0.1" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/ic_lock_focused .xml" value="0.1425" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/drawable/ic_lock_focused.xml" value="0.1" />
+        <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/android projects/EMSEmployeeTracker/app/src/main/res/layout/activity_splash.xml" value="0.25" />
       </map>

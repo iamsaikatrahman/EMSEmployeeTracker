@@ -2,4 +2,6 @@
     <string name="app_name">EMS Employee Tracker</string>
     <string name="app_title">Field Force Management</string>
     <string name="app_short_description">It is a long established fact that a\nwill be distracted by the readable\ncontent of a page when looking</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="password">Password</string>
 </resources>
