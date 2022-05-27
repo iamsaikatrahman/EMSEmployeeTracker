@@ -4,4 +4,6 @@
     <string name="app_short_description">It is a long established fact that a\nwill be distracted by the readable\ncontent of a page when looking</string>
     <string name="enter_your_email">Enter your email</string>
     <string name="password">Password</string>
+    <string name="menu_drawer_open">Drawer Open</string>
+    <string name="menu_drawer_close">Drawer Close</string>
 </resources>

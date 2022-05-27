@@ -3,13 +3,34 @@ package com.saikat.emsemployeetracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-public class MyProfileActivity extends AppCompatActivity {
+import com.saikat.emsemployeetracker.databinding.ActivityMyProfileBinding;
+
+public class MyProfileActivity extends DrawerBaseActivity {
+
+    ActivityMyProfileBinding activityMyProfileBinding;
+
+    Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_profile);
-        getSupportActionBar().setTitle("My Profile");
+        activityMyProfileBinding = ActivityMyProfileBinding.inflate(getLayoutInflater());
+
+        setContentView(activityMyProfileBinding.getRoot());
+        allocateActivityTitle("My Profile");
+//        getSupportActionBar().setTitle("My Profile");
+
+        logout = findViewById(R.id.btn_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MyProfileActivity.this, "Clicked the Logout Button", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
