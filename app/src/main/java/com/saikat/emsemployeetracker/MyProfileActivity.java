@@ -22,7 +22,6 @@ public class MyProfileActivity extends DrawerBaseActivity {
 
         setContentView(activityMyProfileBinding.getRoot());
         allocateActivityTitle("My Profile");
-//        getSupportActionBar().setTitle("My Profile");
 
         logout = findViewById(R.id.btn_logout);
         logout.setOnClickListener(new View.OnClickListener() {

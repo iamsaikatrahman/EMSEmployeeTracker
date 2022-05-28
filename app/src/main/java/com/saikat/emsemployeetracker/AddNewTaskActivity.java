@@ -34,6 +34,8 @@ public class AddNewTaskActivity extends DrawerBaseActivity {
 
         setContentView(activityAddNewTaskBinding.getRoot());
         allocateActivityTitle("Add New Task");
+
+
         initDatePicker();
         btn_datePicker = findViewById(R.id.btn_datePicker);
         btn_save = findViewById(R.id.btn_save);
