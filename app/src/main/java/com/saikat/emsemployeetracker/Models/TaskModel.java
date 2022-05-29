@@ -2,20 +2,32 @@ package com.saikat.emsemployeetracker.Models;
 
 public class TaskModel {
 
+    int id;
     String taskName;
     String taskDescription;
     String duedate;
     String taskPriority;
 
-    public TaskModel(String taskName,
-                     String taskDescription,
-                     String duedate,
-                     String taskPriority
-    ){
+    public TaskModel(
+            int id,
+            String taskName,
+            String taskDescription,
+            String duedate,
+            String taskPriority
+    ) {
+        this.id = id;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.duedate = duedate;
         this.taskPriority = taskPriority;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTaskName() {
