@@ -1,12 +1,17 @@
 package com.saikat.emsemployeetracker;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
-import com.saikat.emsemployeetracker.Adaptar.TaskAdapter;
+
+
 import com.saikat.emsemployeetracker.Models.TaskModel;
 import com.saikat.emsemployeetracker.databinding.ActivityMyFeedBinding;
 
@@ -18,6 +23,7 @@ public class MyFeedActivity extends DrawerBaseActivity {
     Button btn;
     ArrayAdapter taskArrayAdapter;
     AddNewTaskDBHelper addNewTaskDBHelper;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,27 +32,33 @@ public class MyFeedActivity extends DrawerBaseActivity {
         setContentView(activityMyFeedBinding.getRoot());
         allocateActivityTitle("My Feed");
 
-        addNewTaskDBHelper = new AddNewTaskDBHelper(MyFeedActivity.this);
-        ShowTaskOnListView(addNewTaskDBHelper);
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        boolean gps_enabled = false;
+        boolean network_enabled = false;
 
-        ArrayList<TaskModel> list = new ArrayList<>();
+        try {
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch(Exception ex) {}
 
-//        TaskAdapter adapter = new TaskAdapter(list, MyFeedActivity.this);
-//        activityMyFeedBinding.taskRecyclerView.setAdapter(adapter);
-//
-//
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        activityMyFeedBinding.taskRecyclerView.setLayoutManager(linearLayoutManager);
+
+        if(!gps_enabled) {
+            // notify user
+            new AlertDialog.Builder(context)
+                    .setMessage("gps network not enabled")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                            context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                        }
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+        }
+
 
 
 
     }
-    private void ShowTaskOnListView(AddNewTaskDBHelper addNewTaskDBHelper) {
-        taskArrayAdapter = new ArrayAdapter<TaskModel>(MyFeedActivity.this, R.layout.task_card, addNewTaskDBHelper.getEveryone());
-       activityMyFeedBinding.taskListView.setAdapter(taskArrayAdapter);
 
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MyFeedActivity.this);
-//        activityMyFeedBinding.taskRecyclerView.setLayoutManager(linearLayoutManager);
-    }
 }
 

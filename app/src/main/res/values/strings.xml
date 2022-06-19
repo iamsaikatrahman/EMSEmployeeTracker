@@ -11,4 +11,11 @@
     <string name="task_name_title">Name the task</string>
     <string name="due_date_title">Due Date</string>
     <string name="task_priority_title">Task Priority</string>
+
+    <string-array name="programming_languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>CPP</item>
+    </string-array>
 </resources>
